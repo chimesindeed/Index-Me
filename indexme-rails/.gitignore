@@ -1,0 +1,4 @@
+
+log/development.log
+tmp/cache/
+tmp/development_secret.txt
