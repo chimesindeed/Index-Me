@@ -1,0 +1,44 @@
+root{background-color: brown}
+
+.main-content-column-container {
+  display: flex;
+  clear: both;
+}
+
+.left-col {
+  float: left;
+  background-color: forestgreen;
+  width: 280px;
+  height: 800px;
+  padding: 0 10px;
+}
+
+.right-col {
+  float: left;
+  background-color: cadetblue;
+  width: 400px;
+  height: 800px;
+  padding: 0 10px;
+  
+}
+
+.item-holder {
+  float: left;
+  margin-bottom: 5px;
+}
+
+.open-notes {
+  float: left;
+  margin-left: 12px;
+  margin-bottom: 5px
+}
+
+#back-button {
+  float: left;
+  width: 60px;
+  height: 25px;
+  margin-left: 3px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 17px;
+}
