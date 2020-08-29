@@ -1,22 +1,22 @@
 import React from 'react';
-
+import Card from './Card'
 function App() {
   return (
-    <div className="pageContainer">
+    <div className="page-container">
       
-      <div className = "navBar">
+      <div className = "navbar">
       
       </div>
       
-      <div className = "pageHeader">
+      <div className = "page-header">
       
       </div>
 
-      <div className = "mainContent">
+      <div className = "main-content">
 
-        <div className = "mainContent-column-container">
+        <div className = "main-content-column-container">
           <div className = "left-col">
-
+            <Card />
           </div>
 
           <div className = "right-col">
