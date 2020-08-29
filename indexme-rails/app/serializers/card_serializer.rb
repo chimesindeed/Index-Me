@@ -1,3 +1,3 @@
 class CardSerializer < ActiveModel::Serializer
-  attributes :id, :title, :front, :back
+  attributes :id, :front, :back
 end
