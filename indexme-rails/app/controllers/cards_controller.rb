@@ -24,7 +24,7 @@ class CardsController < ApplicationController
     
     private
     def card_params
-      params.require(:card).permit(:title, :front, :back)
+      params.require(:card).permit(:front, :back)
     end
   end
   
