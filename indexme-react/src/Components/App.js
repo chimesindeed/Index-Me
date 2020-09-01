@@ -1,29 +1,18 @@
 import React from 'react';
-import Card from './Card'
+import NavBar from './NavBar'
+import CardList from './CardList'
+
 
 class App extends React.Component {
-  
-  render(){
-  return (
-    <div className="page-container">
-    
+  constructor(props) { super(props) }
 
-      <div className = "main-content">
-
-        <div className = "main-content-column-container">
-          <div className = "left-col">
-            <Card />
-          </div>
-
-          <div className = "right-col">
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-
-  );
+  render() { 
+    return ( <div>
+               <NavBar /> 
+               <CardList />
+             </div>
+            )
+  }
 }
-}
+
 export default App;

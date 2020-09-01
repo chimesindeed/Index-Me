@@ -2,7 +2,7 @@ class Adapter {
 
   constructor() {
     console.log('adapter.js was run')
-    const url = 'http://localhost:3000'
+    const url = 'http://localhost:3001'
     const cards = '/cards'
     this.baseURL = url
     this.cards = cards
