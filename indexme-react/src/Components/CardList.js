@@ -1,34 +1,22 @@
 import React from 'react'
-import Adapter from '../Adapter/adapter';
-import Card from '../Objects/Card'
 import Button from 'react-bootstrap/esm/Button';
+import {connect} from 'react-redux'
+import {getCard} from '../Actions/Actions.js'
 
 class CardList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.adapter = new Adapter();
-    this.state = { allCards: [] }
-  }
   
-  getCards = props =>{
-    this.adapter
-       .getCards()
-       .then(cards => 
-         cards.forEach(card => {
-           const element = new Card(card)
-           let newCards = this.state.allCards.slice();
-           newCards = [...newCards, element]
-           this.setState ({ allCards: newCards})
-        })
-      )
-      
-      .then(cards => console.log(this.state.allCards))
+  handleClick= () => {
+    this.props.getCard()
     
   }
   render(){
+    console.log("INSIDE COMPONENT", this.props.cards)
     return (
-      <Button onClick = {this.getCards} />
+      <button onClick = {this.handleClick}>Get Cards</button>
     )
   }
 }
-export default CardList
+const mapStateToProps =(state) => {
+  return {cards: state}
+}
+export default connect(mapStateToProps, {getCard} )(CardList)
