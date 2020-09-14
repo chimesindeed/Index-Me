@@ -9,9 +9,9 @@ import './index.css'
 import { Provider } from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux' 
 import thunk from 'redux-thunk'
-import cardReducer from './Reducers/cardReducer'
+import rootReducer from './reducers/reducers'
 
-const store = createStore(cardReducer,
+const store = createStore(rootReducer,
 compose(applyMiddleware(thunk)))
 ReactDOM.render(
   
