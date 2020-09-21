@@ -1,29 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'; import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import App from './Components/App';
-import Home from './Components/Home';
-import About from './Components/About';
-import CreateCard from './Components/CreateCard';
-import './index.css'
-import { Provider } from 'react-redux'
 import {createStore, applyMiddleware, compose} from 'redux' 
+import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import rootReducer from './reducers/reducers'
 
+import * as Routing from './Routes/Routes'
+
+import rootReducer from './State/reducers/reducers'
 const store = createStore(rootReducer,
 compose(applyMiddleware(thunk)))
+
+
 ReactDOM.render(
-  
-  <Router>
-    <Provider store= {store}>
+  <Provider store= {store}>
+    <Router>
       <div>
-        <App/>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/createcard" component={CreateCard} />
+        <Route exact path="/" component={ Routing.WelcomeRoute } />
+        <Route exact path="/getcards" component={ Routing.GetCardsRoute } />
+        <Route exact path="/createcard" component={ Routing.CreateCardRoute } />
       </div>
-    </Provider>
-  </Router>,
+    </Router>
+  </Provider>,
   document.getElementById('root')
 );
