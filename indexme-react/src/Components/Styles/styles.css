@@ -9,13 +9,13 @@
   width: 550px;
   height: 300px;
   padding: 0 0px;
-  background-color: blue;
+  background-color: rose;
   
 }
 
 .right-col {
   float: left;
-  background-color: blue;
+  background-color: burlywood;
   width: 500px;
   height: 800px;
   padding: 0 0px;

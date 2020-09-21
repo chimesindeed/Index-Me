@@ -4,13 +4,14 @@ import * as Navigation from '../Shared/NavBars'
 import { Header } from '../Shared/Header';
 
 export default class DisplayCreateCardForm extends Component {
-
+  
+  
   render() { 
     return (      
       <div>
         <Navigation.CreateCardNavBar />
         <Header />
-        <CreateCardForm onSubmit = {submit}/>
+        <CreateCardForm onSubmit = { submit }/>
       </div>
 
     )

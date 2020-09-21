@@ -13,6 +13,7 @@ export const getCards = () => {
 export const createCard = (values) => {
   const front= values.front;
   const back = values.back;
+  
   return (Adapter.createCard(front, back)
     
   )

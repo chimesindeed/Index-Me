@@ -17,7 +17,8 @@ export function createCard(front, back){
     front: front,
     back: back
   }
-  return fetch(`${this.baseURL}${this.cards}`,{
+
+  return fetch(`${baseURL}${cards}`,{
     method: 'POST',
     headers: {
       'content-type': 'application/json',

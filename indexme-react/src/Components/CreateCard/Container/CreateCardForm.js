@@ -42,4 +42,6 @@ export const CreateCardFormFunction = ({handleSubmit}) => {
   })(CreateCardFormFunction)
 
   export const submit = (values) => {
-    createCard(values)}
+    return (createCard(values))
+    
+  }

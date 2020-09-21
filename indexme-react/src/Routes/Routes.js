@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import DisplayCreateCardForm from '../Components/CreateCard/DisplayCreateCardForm'
 import DisplayGetCards from '../Components/GetCards/DisplayGetCards'
 import DisplayWelcome from '../Components/Welcome/DisplayWelcome'

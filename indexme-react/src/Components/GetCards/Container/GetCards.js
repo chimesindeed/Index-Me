@@ -10,16 +10,29 @@ class CardList extends React.Component {
   render() {
     return (
       <div>
-        <div class="column-container mt-5">
+        <div class="column-container mt-0">
         
           <div class="left-col mr-auto">
             <button onClick = {this.handleClick}>Get Cards</button>
           </div>
     
-          <div class="right-col">
+          <div class="right-col mr-auto">
             {      
-              this.props.state ? this.props.state.map(card => {return (<h1>{card.front}</h1>)})
-                : <h1>IMPORT YOUR CARDS</h1>
+              this.props.state
+                ?
+                  this.props.state.map(card => {
+                    return (
+                      <div>
+                        <div>
+                          <h6>Front: {card.front}</h6>
+                          <h6>Back: {card.back}</h6>
+                          <br/>
+                        </div>
+                      </div>
+                    )
+                  })
+                :
+                  <h1>IMPORT YOUR CARDS</h1>
             } 
           </div>
         </div>
