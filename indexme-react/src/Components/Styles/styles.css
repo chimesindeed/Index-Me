@@ -1,0 +1,34 @@
+.column-container {
+  background-color: rgb(134, 90, 163);
+  display: flex;
+  clear: both;
+}
+
+.left-col {
+  float: left;
+  width: 550px;
+  height: 300px;
+  padding: 0 0px;
+  background-color: blue;
+  
+}
+
+.right-col {
+  float: left;
+  background-color: blue;
+  width: 500px;
+  height: 800px;
+  padding: 0 0px;
+  
+}
+
+
+#index-me {
+  float: left;
+  width: 100%;
+  height: 80px;
+  /* margin-bottom: 20px; */
+  font-size: 60px;
+  color: cornsilk;
+  background-color: black 
+}
