@@ -1,7 +1,7 @@
 import React, { Component} from 'react'
 import { Header} from '../Shared/Header'
 import * as Navigation from '../Shared/NavBars'
-import GetCards from './Container/GetCards'
+import CardList from './Container/CardList'
 
 export default class DisplayGetCards extends Component {
   
@@ -10,7 +10,7 @@ export default class DisplayGetCards extends Component {
       <div>
         <Navigation.GetCardsNavBar />
         <Header />
-        <GetCards />
+        <CardList />
       </div>
     )
   }

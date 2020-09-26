@@ -30,6 +30,7 @@ export const CreateCardFormFunction = ({handleSubmit}) => {
           </form> 
         </div>
           <div class="right-col mr-auto">
+            
           </div>
       </div>
     </div>
