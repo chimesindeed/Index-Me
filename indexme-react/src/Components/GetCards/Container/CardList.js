@@ -26,6 +26,10 @@ class CardList extends React.Component {
       clicked: true
     })
   )
+
+  handleCardFlipped = (e) => (
+    this.setState(prevState => ({ isFlipped: !prevState.isFlipped }))
+  )
       
   render() {
     return (
@@ -60,20 +64,18 @@ class CardList extends React.Component {
           </div>
 
           <div class="right-col mr-auto">
-            <h5>{this.state.currentCardFront}</h5>
-            <h5>{this.state.currentCardBack}</h5>
-            {
-              this.state.clicked === false
-                
-                ? 
-                  (
-                    <button style = {{display: 'none'}}>Flip</button>
-                  )
-                :
-                  (
-                    <button style = {{display: 'block'}}>Flip</button>
-                  )
-            }
+            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection='vertical'>
+              <div>
+                <h2>{this.state.currentCardFront}</h2>
+                <button onClick={this.handleCardFlipped}>Click to flip</button>
+              </div>
+
+              <div>
+                <h2>{this.state.currentCardBack}</h2>
+                <button onClick={this.handleCardFlipped}>Click to flip</button>
+              </div>
+            </ReactCardFlip>
+
           </div>
         </div>
       </div>
