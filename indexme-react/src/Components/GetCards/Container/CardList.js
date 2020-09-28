@@ -7,23 +7,22 @@ import ReactCardFlip from 'react-card-flip'
 class CardList extends React.Component {
   constructor(){
     super()
-    this.toggled = "none"
     this.state = {
+      cardSelected: false,
       currentCardFront: "",
       currentCardBack: "",
-      isFlipped: false,
-      clicked: false
+      isFlipped: false
     }
   }  
   handleGetCards= () => (
     this.props.getCards(),
-    this.setState({clicked: false, currentCardFront: "", currentCardBack: ""}))
+    this.setState({cardSelected: false, currentCardFront: "", currentCardBack: ""}))
   
   handleCardClicked = (e) => (
     this.setState({
       currentCardFront: e.target.getAttribute('data-front'),
       currentCardBack: e.target.getAttribute('data-back'),
-      clicked: true
+      cardSelected: true
     })
   )
 
@@ -64,17 +63,25 @@ class CardList extends React.Component {
           </div>
 
           <div class="right-col mr-auto">
-            <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection='vertical'>
-              <div>
-                <h2>{this.state.currentCardFront}</h2>
-                <button onClick={this.handleCardFlipped}>Click to flip</button>
-              </div>
+            {
+              this.state.cardSelected === false
+                ?
+                  (
+                    <div></div>
+                  )
+                :
+                  <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection='vertical'>
+                    <div>
+                      <h2>WORD: {this.state.currentCardFront}</h2>
+                      <button onClick={this.handleCardFlipped}>Click to flip</button>
+                    </div>
 
-              <div>
-                <h2>{this.state.currentCardBack}</h2>
-                <button onClick={this.handleCardFlipped}>Click to flip</button>
-              </div>
-            </ReactCardFlip>
+                    <div>
+                      <h2>DEFINITION: {this.state.currentCardBack}</h2>
+                      <button onClick={this.handleCardFlipped}>Click to flip</button>
+                    </div>
+                  </ReactCardFlip>
+            } 
 
           </div>
         </div>
