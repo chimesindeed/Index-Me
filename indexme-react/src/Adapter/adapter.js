@@ -29,7 +29,7 @@ export function createCard(front, back){
 }
   
   export function deleteCard(card){
-    return fetch(`${this.baseURL}${this.cards}/${card}`, {
+    return fetch(`${baseURL}${cards}/${card}`, {
       method: 'delete',
       headers: {'Content-Type': 'application/json'}
     })
