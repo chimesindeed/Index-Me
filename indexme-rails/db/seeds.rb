@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 cards= Card.create [
-  {front: 'First Card Front', back: 'First Card Back'},
-  {front: '2nd Card Front',   back: '2nd Card Back'},
-  {front: '3rd Card Front',   back: '3rd Card Back'},
+  {front: 'Ruby',      back: 'A Precious Stone'},
+  {front: 'Rails',     back: 'Something to hold on to when on the stairs'},
+  {front: 'Sinatra',   back: 'A singer a little before my time'},
+  {front: 'Java',      back: 'A cup of coffee'},
+  {front: 'Web',       back: 'Something Charelette Wove'},
+  {front: 'Sinatra',   back: 'A singer a little before my time'},
+  {front: 'Sinatra',   back: 'A singer a little before my time'},
+  {front: 'Sinatra',   back: 'A singer a little before my time'},
+  
 ]
