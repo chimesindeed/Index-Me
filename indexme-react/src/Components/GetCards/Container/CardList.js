@@ -2,20 +2,28 @@ import '../../Styles/styles.css'
 import React from 'react'
 import {connect} from 'react-redux'
 import {getCards} from '../../../State/actions/actions'
+import ReactCardFlip from 'react-card-flip'
 
 class CardList extends React.Component {
   constructor(){
     super()
+    this.toggled = "none"
     this.state = {
       currentCardFront: "",
-      currentCardBack: ""
+      currentCardBack: "",
+      isFlipped: false,
+      clicked: false
     }
   }  
-  handleGetCards= () => { this.props.getCards() }
-  handleClick = (e) => (
+  handleGetCards= () => (
+    this.props.getCards(),
+    this.setState({clicked: false, currentCardFront: "", currentCardBack: ""}))
+  
+  handleCardClicked = (e) => (
     this.setState({
       currentCardFront: e.target.getAttribute('data-front'),
-      currentCardBack: e.target.getAttribute('data-back')
+      currentCardBack: e.target.getAttribute('data-back'),
+      clicked: true
     })
   )
       
@@ -38,7 +46,7 @@ class CardList extends React.Component {
                             <button
                               data-front ={card.front}
                               data-back = {card.back }
-                              onClick={this.handleClick}>{card.front}
+                              onClick={this.handleCardClicked}>{card.front}
                             </button>
                             <br/> 
                           </div>
@@ -54,6 +62,18 @@ class CardList extends React.Component {
           <div class="right-col mr-auto">
             <h5>{this.state.currentCardFront}</h5>
             <h5>{this.state.currentCardBack}</h5>
+            {
+              this.state.clicked === false
+                
+                ? 
+                  (
+                    <button style = {{display: 'none'}}>Flip</button>
+                  )
+                :
+                  (
+                    <button style = {{display: 'block'}}>Flip</button>
+                  )
+            }
           </div>
         </div>
       </div>
