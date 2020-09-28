@@ -10,9 +10,6 @@ cards= Card.create [
   {front: 'Rails',     back: 'Something to hold on to when on the stairs'},
   {front: 'Sinatra',   back: 'A singer a little before my time'},
   {front: 'Java',      back: 'A cup of coffee'},
-  {front: 'Web',       back: 'Something Charelette Wove'},
-  {front: 'Sinatra',   back: 'A singer a little before my time'},
-  {front: 'Sinatra',   back: 'A singer a little before my time'},
-  {front: 'Sinatra',   back: 'A singer a little before my time'},
-  
+  {front: 'Web',       back: 'Something Charelette Wove'}
+
 ]
