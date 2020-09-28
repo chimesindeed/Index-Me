@@ -35,10 +35,10 @@ class CardList extends React.Component {
   )
 
   handleDeleteCard = (e) => (
-    console.log(this.state.currentCardId),
     deleteCard(this.state.currentCardId)
     .then(res => {
-      this.props.getCards();
+      this.props.getCards()
+      this.setState({cardSelected: false})
     })
     
   )
